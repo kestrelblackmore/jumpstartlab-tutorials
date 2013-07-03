@@ -1,6 +1,6 @@
 ## JumpstartLab Tutorials
 
-These are **MY** attempts at the Ruby/Rails tutorials by JumpstartLab(http://tutorials.jumpstartlab.com/)
+These are **MY** attempts at the Ruby/Rails tutorials by JumpstartLab (http://tutorials.jumpstartlab.com/)
 
 #### Ruby in 100 Minutes
 

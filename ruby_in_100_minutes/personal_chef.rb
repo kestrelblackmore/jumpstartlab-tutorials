@@ -5,7 +5,7 @@ class PersonalChef
 		else
 			puts "Making your toast #{color}."
 		end
-		
+
 		return self
 	end
 

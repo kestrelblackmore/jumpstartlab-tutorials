@@ -3,6 +3,6 @@ class Sample
 		puts "Hello, World!"
 	end
 end
-
+ 
 s = Sample.new
 s.hello
