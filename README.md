@@ -6,3 +6,7 @@ These are **MY** attempts at the Ruby/Rails tutorials by JumpstartLab (http://tu
 
 - my_program.rb (Very simple class)
 - personal_chef.rb (Examples of all the basic concepts and syntax of Ruby)
+
+#### Encryptor
+
+- encryptor.rb (Example of ecryption/decryption)
