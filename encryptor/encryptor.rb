@@ -20,19 +20,6 @@ class Encryptor
     puts "Encrypted #{filename} to #{new_filename}."
   end
 
-  def write_to_file(filename, data)
-    output = File.open(filename, "w")
-    output.write(data)
-    output.close
-  end
-
-  def get_file_contents(filename)
-    input = File.open(filename, "r")
-    contents = input.read
-    input.close
-    return contents
-  end
-
   def decrypt(string, rotation)
     encrypt(string, rotation * -1)
   end
@@ -46,6 +33,8 @@ class Encryptor
     results.join
   end
 
+  private 
+
   def encrypt_letter(letter, rotation)
     cipher_for_rotation = cipher(rotation)
     cipher_for_rotation[letter]
@@ -57,6 +46,19 @@ class Encryptor
     
     # zip joins two arrays together. Hash turns them into a true key/value pair
     Hash[characters.zip(rotated_characters)]
+  end
+
+  def write_to_file(filename, data)
+    output = File.open(filename, "w")
+    output.write(data)
+    output.close
+  end
+
+  def get_file_contents(filename)
+    input = File.open(filename, "r")
+    contents = input.read
+    input.close
+    return contents
   end
 
 end
