@@ -33,6 +33,12 @@ class Encryptor
     results.join
   end
 
+  def crack(message)
+    supported_characters.count.times.collect do |attempt|
+      decrypt(message, attempt)
+    end
+
+  end
   private 
 
   def encrypt_letter(letter, rotation)
@@ -59,6 +65,10 @@ class Encryptor
     contents = input.read
     input.close
     return contents
+  end
+
+  def supported_characters
+    (' '..'z').to_a
   end
 
 end
