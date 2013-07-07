@@ -1,4 +1,14 @@
 class Encryptor
+  require 'digest'
+
+  def initialize
+    @password = 'b366f9f0e8d13c58ae091bd16242e616'
+
+    while check_password == false do
+      puts "Wrong password!"
+    end
+
+  end
 
   def decrypt_file(filename, rotation)
     new_filename = filename.gsub("encrypted", "decrypted")
@@ -65,6 +75,13 @@ class Encryptor
     contents = input.read
     input.close
     return contents
+  end
+
+  def check_password
+    puts "Enter the password below."
+    encrypted_input = encrypt(gets.chomp, 13)
+    md5_input = Digest::MD5.hexdigest(encrypted_input) 
+    md5_input == @password
   end
 
   def supported_characters
