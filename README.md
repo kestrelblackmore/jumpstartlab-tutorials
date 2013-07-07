@@ -10,3 +10,4 @@ These are **MY** attempts at the Ruby/Rails tutorials by JumpstartLab (http://tu
 #### Encryptor
 
 - encryptor.rb (Example of ecryption/decryption)
+- real_time.rb (Interactive encryption/decryption)
