@@ -11,3 +11,8 @@ These are **MY** attempts at the Ruby/Rails tutorials by JumpstartLab (http://tu
 
 - encryptor.rb (Example of ecryption/decryption)
 - real_time.rb (Interactive encryption/decryption)
+
+#### Event Manager
+
+- lib/event_manager.rb (Examples of CSV, string manipulation)
+- event_attendees.csv (sample data)
