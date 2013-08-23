@@ -14,5 +14,10 @@ These are **MY** attempts at the Ruby/Rails tutorials by JumpstartLab (http://tu
 
 #### Event Manager
 
-- lib/event_manager.rb (Examples of CSV, string manipulation)
+- lib/event_manager.rb (Examples of CSV, string manipulation, Sunlight API, ERB templating)
 - event_attendees.csv (sample data)
+
+#### Micro Blogger
+
+- micro_blogger.rb (command line twitter client)
+- using jumpstart_auth gem to oauth into twitter
