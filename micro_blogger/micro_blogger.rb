@@ -14,14 +14,19 @@ class MicroBlogger
 		command = ""
 		while command != "q"
 			printf "Enter command: "
-			command = gets.chomp
+			
+			input = gets.chomp
+			parts = input.split
+			command = parts[0]
 
 			case command
 				when 'q' then puts "Goodbye!"
+				when 't' then tweet(parts[1..-1].join(" "))
+				when 'dm' then dm(parts[1], parts[2..-1].join(" "))
 				else
 					puts "Sorry, I don't know how to #{command}"
 			end
-			
+
 		end
 
 	end
@@ -33,6 +38,12 @@ class MicroBlogger
 			 puts "Message must be less than 140 characters"
 		end
 	end
+
+	def dm(ratget, message)
+		puts "Trying to send #{target} this direct message:"
+		puts message
+	end
+
 end
 
 blogger = MicroBlogger.new
