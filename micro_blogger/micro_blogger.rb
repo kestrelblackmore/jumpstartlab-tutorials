@@ -23,6 +23,7 @@ class MicroBlogger
 				when 'q' then puts "Goodbye!"
 				when 't' then tweet(parts[1..-1].join(" "))
 				when 'dm' then dm(parts[1], parts[2..-1].join(" "))
+				when 'p' then test_functionality
 				else
 					puts "Sorry, I don't know how to #{command}"
 			end
@@ -39,9 +40,30 @@ class MicroBlogger
 		end
 	end
 
-	def dm(ratget, message)
+	def dm(target, message)
 		puts "Trying to send #{target} this direct message:"
 		puts message
+
+		screen_names = get_friends
+
+		if screen_names.include?(target)
+			tweet("d #{target} #{message}")
+			puts "Message sent."
+
+		else
+			puts "#{target} does not follow you so I couldn't DM them for you :("
+		end
+
+	end
+
+	def test_functionality
+		#puts get_friends
+	end
+
+	private
+
+	def get_friends
+		@client.followers.collect { |follower| follower.screen_name }
 	end
 
 end
