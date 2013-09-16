@@ -44,9 +44,7 @@ class MicroBlogger
 		puts "Trying to send #{target} this direct message:"
 		puts message
 
-		screen_names = get_friends
-
-		if screen_names.include?(target)
+		if get_followers.include?(target)
 			tweet("d #{target} #{message}")
 			puts "Message sent."
 
@@ -57,12 +55,12 @@ class MicroBlogger
 	end
 
 	def test_functionality
-		#puts get_friends
+		#puts get_followers
 	end
 
 	private
 
-	def get_friends
+	def get_followers
 		@client.followers.collect { |follower| follower.screen_name }
 	end
 
