@@ -24,6 +24,7 @@ class MicroBlogger
 				when 't' then tweet(parts[1..-1].join(" "))
 				when 'dm' then dm(parts[1], parts[2..-1].join(" "))
 				when 'p' then test_functionality
+				when 'elt' then everyones_last_tweet
 				else
 					puts "Sorry, I don't know how to #{command}"
 			end
@@ -50,6 +51,16 @@ class MicroBlogger
 
 		else
 			puts "#{target} does not follow you so I couldn't DM them for you :("
+		end
+
+	end
+
+	def everyones_last_tweet
+		# get list of those I'm following
+		friends = @client.friends[0..5].sort_by { |friend| friend.screen_name.downcase}
+		friends.each do |friend|
+			puts "#{friend.screen_name} said (#{friend.status.created_at.strftime("%A, %b %d")}): #{friend.status.text}"
+			puts "--"
 		end
 
 	end
