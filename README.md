@@ -22,3 +22,7 @@ These are **MY** attempts at the Ruby/Rails tutorials by JumpstartLab (http://tu
 - micro_blogger.rb (command line twitter client)
 - using jumpstart_auth gem to oauth into twitter
 - using bitly gem to shorten urls
+
+#### Blogger
+
+- Ruby on Rails Blogging engine
